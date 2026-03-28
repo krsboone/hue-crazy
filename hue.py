@@ -18,8 +18,11 @@ import requests
 
 # ── Bridge configuration ──────────────────────────────────────────────────────
 
-BRIDGE   = "your-bridge-ip"
-API_KEY  = "your-api-key"
+try:
+    from config import BRIDGE, API_KEY
+except ImportError:
+    BRIDGE  = "your-bridge-ip"
+    API_KEY = "your-api-key"
 DEFAULT_LIGHT = 6
 
 # ── Color palette (CIE xy coordinates) ───────────────────────────────────────
